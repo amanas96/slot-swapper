@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../../services/api";
 import type { IEvent } from "../../types";
-import { useAuth } from "../../context/authContext";
+// import { useAuth } from "../../context/authContext";
 import EventForm from "./eventForm";
 
 // --- STATUS BADGE COMPONENT ---
