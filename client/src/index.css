@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------
+   🎨 Custom Tailwind Component Styles
+   Reusable, professional design system
+------------------------------------------ */
+@layer components {
+  /* 🌅 Page gradient background */
+  .page-gradient {
+    @apply min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-blue-100;
+  }
+
+  /* 🧊 Glassmorphic card */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/30 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300;
+  }
+
+  /* 🟣 Purple gradient block (e.g., Create Slot card) */
+  .purple-gradient {
+    @apply bg-gradient-to-r from-purple-500 via-purple-600 to-indigo-600 text-white;
+  }
+
+  /* 🌈 Gradient buttons */
+  .btn-gradient {
+    @apply w-full py-2 px-4 font-semibold text-white rounded-lg shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-200;
+  }
+  .btn-green {
+    @apply bg-gradient-to-r from-green-500 to-emerald-600;
+  }
+  .btn-gray {
+    @apply bg-gradient-to-r from-gray-500 to-gray-600;
+  }
+  .btn-red {
+    @apply bg-gradient-to-r from-red-500 to-pink-600;
+  }
+
+  /* 🧾 Typography */
+  .header-title {
+    @apply text-3xl md:text-4xl font-extrabold tracking-tight text-gray-800;
+  }
+  .gradient-header {
+    @apply text-3xl md:text-4xl font-extrabold tracking-tight text-white;
+  }
+  .gradient-subtext {
+    @apply text-base text-purple-100 font-medium;
+  }
+  .section-header {
+    @apply text-2xl font-bold text-gray-900 mb-4;
+  }
+
+  /* 🏷️ Status badges */
+  .badge {
+    @apply px-2 py-1 text-xs font-semibold rounded-full shadow-sm;
+  }
+  .badge-busy {
+    @apply bg-gray-200 text-gray-800;
+  }
+  .badge-swap {
+    @apply bg-green-200 text-green-800;
+  }
+  .badge-pending {
+    @apply bg-yellow-200 text-yellow-800;
+  }
+  @layer utilities {
+    .btn-gradient {
+      @apply px-4 py-2 rounded-lg text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300;
+    }
+
+    .page-gradient {
+      @apply bg-gradient-to-br from-indigo-50 via-white to-purple-50 min-h-screen;
+    }
+
+    .glass-card {
+      @apply bg-white/60 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg;
+    }
+  }
+}
