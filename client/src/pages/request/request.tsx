@@ -43,13 +43,13 @@ const RequestCard = ({
           <div className="flex gap-3">
             <button
               onClick={() => onRespond(request._id, true)}
-              className="btn-gradient from-green-500 to-emerald-600 text-white flex-1"
+              className="btn-gradient from-green-500 to-emerald-600 text-gray-700 flex-1"
             >
               Accept
             </button>
             <button
               onClick={() => onRespond(request._id, false)}
-              className="btn-gradient from-red-500 to-pink-600 text-white flex-1"
+              className="btn-gradient from-red-500 to-pink-600 text-gray-700 flex-1"
             >
               Reject
             </button>
