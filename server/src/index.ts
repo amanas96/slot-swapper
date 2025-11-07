@@ -13,9 +13,23 @@ connectDB();
 
 const app: Express = express();
 
+const allowedOrigins = [
+  "https://slot-swapper-amber.vercel.app",
+  "http://localhost:5173",
+];
+
 // Middleware
-app.use(cors()); // Allow cross-origin requests
-app.use(express.json()); // Parse JSON bodies
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true, // allows cookies / auth headers
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+app.use(express.json());
 
 //Api
 app.use("/api/auth", authRoutes);
