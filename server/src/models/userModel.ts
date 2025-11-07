@@ -1,4 +1,4 @@
-import mongoose, { Document, Schema, model, models } from "mongoose";
+import mongoose, { Document, Schema, model, models, Model } from "mongoose";
 import bcrypt from "bcryptjs";
 
 // --- INTERFACES ---
@@ -59,5 +59,5 @@ userSchema.methods.comparePassword = async function (
 };
 
 // --- MODEL EXPORT ---
-const User = models.User || model<UserDocument>("User", userSchema);
-export default User;
+export default (models.User as Model<UserDocument>) ||
+  model<UserDocument>("User", userSchema);

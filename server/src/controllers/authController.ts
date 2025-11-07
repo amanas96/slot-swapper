@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
+import mongoose from "mongoose";
 import User, { UserDocument } from "../models/userModel";
 import jwt from "jsonwebtoken";
-import { IUser } from "../models/userModel"; // Import the base interface
+import { IUser } from "../models/userModel";
 
 // Helper function to sign JWT
 const signToken = (id: string) => {
@@ -31,7 +32,7 @@ export const signup = async (req: Request, res: Response) => {
     });
 
     // 3. Generate token
-    const token = signToken(newUser._id);
+    const token = signToken(newUser._id.toString());
 
     // 4. Send response (don't send password back)
     res.status(201).json({
@@ -70,7 +71,7 @@ export const login = async (req: Request, res: Response) => {
     }
 
     // 4. Generate token
-    const token = signToken(user._id);
+    const token = signToken(user._id.toString());
 
     // 5. Send response
     res.status(200).json({
